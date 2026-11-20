@@ -1,0 +1,32 @@
+# Client (Vue + Deno/Vite)
+/client/node_modules/
+/client/dist/
+/client/dist-ssr/
+/client/.vite/
+/client/*.local
+/client/.vscode/*
+!/client/.vscode/extensions.json
+
+# Server (Python + uv)
+/server/.venv/
+/server/__pycache__/
+/server/**/__pycache__/
+/server/*.py[cod]
+/server/build/
+/server/dist/
+/server/wheels/
+/server/*.egg-info/
+/server/.pytest_cache/
+/server/.ruff_cache/
+/server/.mypy_cache/
+/server/datasets/
+/server/models/*.joblib
+/server/models/pattern_metrics.json
+
+# Umum
+*.log
+.DS_Store
+.idea/
+.env
+.env.*
+!.env.example
