@@ -5,6 +5,11 @@ Agent diharapkan membaca ini lebih dulu, lalu mengimplementasikan sesuai
 kontrak di bawah. Fokusnya **satu model saja**: analisis pola/motif taktis
 dari posisi catur. Tidak ada klasifikasi fase, tidak ada engine eksternal.
 
+> **Konvensi penamaan:** BE / backend = folder `server/`; FE / frontend =
+> folder `client/`. Kata "backend" dan "frontend" di dokumen ini selalu
+> merujuk ke peran, bukan ke nama folder. Semua path yang tertulis sudah
+> memakai nama folder asli di repo.
+
 ---
 
 ## 1. Tujuan & scope
@@ -61,8 +66,8 @@ Alur utama:
 ## 3. Struktur direktori target
 
 ```text
-chess-pattern-model/
-├── backend/
+project-chess-analyzer/
+├── server/                         # backend / BE
 │   ├── main.py                     # entrypoint ASGI: `from app.api import app`
 │   ├── train_pattern.py            # CLI training model
 │   ├── prepare_pattern_dataset.py  # inspeksi/ekspor subset dataset hasil filter
@@ -84,7 +89,7 @@ chess-pattern-model/
 │       ├── test_pattern_features.py# 46 fitur dari FEN
 │       ├── test_pattern_training.py# smoke test training + metrik
 │       └── test_api.py             # health + endpoint prediksi + batas input
-└── frontend/
+└── client/                         # frontend / FE
     ├── deno.json, deno.lock        # package manager Deno 2 (task dev/build/test/preview)
     ├── vite.config.ts              # plugin Vue + proxy /api -> localhost:8000
     ├── index.html, src/main.ts     # entry
@@ -115,7 +120,7 @@ chess-pattern-model/
 
 ---
 
-## 4. Backend
+## 4. Backend — folder `server/` (BE)
 
 ### 4.1 Modul & tanggung jawab
 
@@ -245,7 +250,7 @@ Dependency: Python 3.14, `uv`, `fastapi[standard]`, `datasets>=5.1.0`,
 
 ---
 
-## 5. Frontend
+## 5. Frontend — folder `client/` (FE)
 
 ### 5.1 Lapisan
 
@@ -310,7 +315,7 @@ Pekerjaan dianggap selesai bila:
 
 ## 7. Cara menjalankan
 
-Backend (dari `backend/`):
+Backend / BE (dari `server/`):
 
 ```bash
 uv sync
@@ -319,7 +324,7 @@ uv run uvicorn main:app --reload       # http://localhost:8000
 uv run pytest
 ```
 
-Frontend (dari `frontend/`):
+Frontend / FE (dari `client/`):
 
 ```bash
 deno install
