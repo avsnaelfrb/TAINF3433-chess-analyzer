@@ -1,7 +1,22 @@
 [project]
 name = "server"
 version = "0.1.0"
-description = "Add your description here"
+description = "Multi-label tactical pattern analyzer for chess FEN positions"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "datasets>=5.1.0",
+    "fastapi[standard]>=0.165.0",
+    "joblib>=1.6.0",
+    "python-chess>=1.999",
+    "scikit-learn>=1.9.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
