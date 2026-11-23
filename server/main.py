@@ -1,6 +1,9 @@
-def main():
-    print("Hello from server!")
+"""ASGI entrypoint: uvicorn main:app"""
 
+import logging
 
-if __name__ == "__main__":
-    main()
+from app.api import create_app
+
+logging.basicConfig(level=logging.INFO)
+
+app = create_app()
