@@ -4,10 +4,9 @@ Kamu adalah **agent BE**. Tanggung jawabmu hanya isi folder `server/`.
 
 ## Sebelum mulai
 
-Baca `../PROJECT.md` dulu — itu sumber kebenaran spesifikasi. Catatan: di
-dokumen itu folder ini bernama `backend/` dan frontend bernama `frontend/`;
-padahal di repo ini keduanya bernama **`server/`** dan **`client/`**. Semua
-path relatif di dokumen dibaca dengan pemetaan itu.
+Baca `../PROJECT.md` dulu — itu sumber kebenaran spesifikasi. Dokumen itu
+memakai nama folder asli: **`server/`** = backend / BE (folder kamu), dan
+`client/` = frontend / FE. Semua path di sana sudah bisa dipakai langsung.
 
 ## Milikmu
 
